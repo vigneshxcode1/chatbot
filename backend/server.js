@@ -10,6 +10,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
+app.use(express.static(path.join(__dirname, 'build')));
+
 
 mongoose.connect("mongodb+srv://vicky:test123@cluster0.epdrsry.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 const db = mongoose.connection;
@@ -18,6 +20,9 @@ db.once("open", () => {
   console.log("Connected to MongoDB");
 });
 
+app.get('*', (req, res) => {
+  res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+});
 
 app.post("/chat", async (req, res) => {
   const { message } = req.body;
