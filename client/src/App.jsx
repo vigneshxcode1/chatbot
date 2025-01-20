@@ -9,7 +9,6 @@ function App() {
     <BrowserRouter>
       <Routes>
       <Route path='/' element={<Chatbot/>}/>
- 
       </Routes>
     </BrowserRouter>
     

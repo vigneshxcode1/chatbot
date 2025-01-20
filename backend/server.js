@@ -31,7 +31,11 @@ app.post("/chat", async (req, res) => {
     reply = "Hi there! How can I assist you today?";
   } else if (message.toLowerCase().includes("help")) {
     reply = "Sure! Please tell me what you need help with.";
-  } else if (message.toLowerCase().includes("bye")) {
+  }
+  else if (message.toLowerCase().includes("hi")) {
+    reply = " Please tell me what you need help with.";
+  } 
+  else if (message.toLowerCase().includes("bye")) {
     reply = "tata bye byee";
   } else if (message.toLowerCase().includes("hi")) {
     reply = "hi, Please tell me what you need help with.";

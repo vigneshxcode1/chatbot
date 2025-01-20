@@ -17,7 +17,7 @@ const Chatbot = () => {
 
     try {
      
-      const res = await axios.post("https://chatbot-server-bs83.onrender.com/chat", { message: input });
+      const res = await axios.post("https://chatbot-server-zszv.onrender.com/chat", { message: input });
 
       const botMessage = { sender: "bot", text: res.data.reply }; 
 
