@@ -7,10 +7,7 @@ import Message from "./model.js";
 const app = express();
 
 
-app.use(cors({
-  origin:"https://chatbot-o0u1.onrender.com"
-}
-));
+app.use(cors());
 app.use(express.json());
 
 
