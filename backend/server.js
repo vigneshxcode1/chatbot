@@ -12,6 +12,14 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname, 'build')));
 
+app.use((req, res, next) => {
+  const contentType = mime.getType(req.path);
+  if (contentType) {
+    res.setHeader('Content-Type', contentType);
+  }
+  next();
+});
+
 
 mongoose.connect("mongodb+srv://vicky:test123@cluster0.epdrsry.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0");
 const db = mongoose.connection;
